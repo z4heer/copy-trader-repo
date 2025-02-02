@@ -1,0 +1,10 @@
+2025-02-02 13:19:45,647 [INFO] Fetched 4 active users.
+2025-02-02 13:19:45,647 [INFO] 127.0.0.1 - - [02/Feb/2025 13:19:45] "GET /active-users HTTP/1.1" 200 -
+2025-02-02 13:21:04,582 [INFO] Fetched 4 active users.
+2025-02-02 13:21:04,582 [INFO] 127.0.0.1 - - [02/Feb/2025 13:21:04] "GET /active-users HTTP/1.1" 200 -
+2025-02-02 13:24:04,279 [INFO] Fetched 4 active users.
+2025-02-02 13:24:04,279 [INFO] 127.0.0.1 - - [02/Feb/2025 13:24:04] "GET /active-users HTTP/1.1" 200 -
+2025-02-02 13:25:34,627 [INFO] Fetched 4 active users.
+2025-02-02 13:25:34,627 [INFO] 127.0.0.1 - - [02/Feb/2025 13:25:34] "GET /active-users HTTP/1.1" 200 -
+2025-02-02 13:26:37,792 [INFO] Fetched 4 active users.
+2025-02-02 13:26:37,793 [INFO] 127.0.0.1 - - [02/Feb/2025 13:26:37] "GET /active-users HTTP/1.1" 200 -

@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header bg-primary text-white">
+    Net Positions
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>Position ID</th>
+          <th>Symbol</th>
+          <th>Quantity</th>
+          <th>P&amp;L</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let position of netPositions">
+          <td>{{ position.positionId }}</td>
+          <td>{{ position.symbol }}</td>
+          <td>{{ position.quantity }}</td>
+          <td>{{ position.pnl }}</td>
+          <td>
+            <!-- Link to sell order. Passing the positionId as a query parameter -->
+            <a [routerLink]="['/sell-order']" [queryParams]="{ orderId: position.positionId }" class="btn btn-sm btn-success">
+              Sell
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

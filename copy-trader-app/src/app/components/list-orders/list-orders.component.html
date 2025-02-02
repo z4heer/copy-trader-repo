@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header bg-primary text-white">
+    List Orders
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Type</th>
+          <th>Quantity</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.orderId }}</td>
+          <td>{{ order.type }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.status }}</td>
+          <td>
+            <!-- Link to modify order. Passing the orderId as a query parameter -->
+            <a [routerLink]="['/modify-order']" [queryParams]="{ orderId: order.orderId }" class="btn btn-sm btn-warning me-2">
+              Modify
+            </a>
+            <!-- Link to cancel order. Passing the orderId as a query parameter -->
+            <a [routerLink]="['/cancel-order']" [queryParams]="{ orderId: order.orderId }" class="btn btn-sm btn-danger">
+              Cancel
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

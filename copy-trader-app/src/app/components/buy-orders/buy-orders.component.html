@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+      Buy Orders
+    </div>
+    <div class="card-body">
+      <form [formGroup]="buyOrderForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="quantity" class="form-label">Quantity</label>
+          <input type="number" id="quantity" class="form-control" formControlName="quantity">
+          <div *ngIf="buyOrderForm.get('quantity')?.invalid && buyOrderForm.get('quantity')?.touched" class="text-danger">
+            Quantity is required and must be at least 1.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="orderType" class="form-label">Order Type</label>
+          <select id="orderType" class="form-select" formControlName="orderType">
+            <option value="">Select Order Type</option>
+            <option value="market">Market</option>
+            <option value="limit">Limit</option>
+          </select>
+          <div *ngIf="buyOrderForm.get('orderType')?.invalid && buyOrderForm.get('orderType')?.touched" class="text-danger">
+            Order type is required.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="buyOrderForm.invalid">Submit Buy Order</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+      Sell Order
+    </div>
+    <div class="card-body">
+      <form [formGroup]="sellOrderForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="orderId" class="form-label">Order/Position ID</label>
+          <input type="text" id="orderId" class="form-control" formControlName="orderId">
+          <div *ngIf="sellOrderForm.get('orderId')?.invalid && sellOrderForm.get('orderId')?.touched" class="text-danger">
+            Order/Position ID is required.
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="sellQuantity" class="form-label">Sell Quantity</label>
+          <input type="number" id="sellQuantity" class="form-control" formControlName="sellQuantity">
+          <div *ngIf="sellOrderForm.get('sellQuantity')?.invalid && sellOrderForm.get('sellQuantity')?.touched" class="text-danger">
+            Sell quantity is required and must be at least 1.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="sellOrderForm.invalid">Submit Sell Order</button>
+      </form>
+    </div>
+  </div>
+  

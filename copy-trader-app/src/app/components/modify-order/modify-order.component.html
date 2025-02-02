@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header bg-primary text-white">
+    Modify Order
+  </div>
+  <div class="card-body">
+    <form [formGroup]="modifyOrderForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="orderId" class="form-label">Order ID</label>
+        <input type="text" id="orderId" class="form-control" formControlName="orderId" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="newQuantity" class="form-label">New Quantity</label>
+        <input type="number" id="newQuantity" class="form-control" formControlName="newQuantity">
+        <div *ngIf="modifyOrderForm.get('newQuantity')?.invalid && modifyOrderForm.get('newQuantity')?.touched" class="text-danger">
+          New quantity is required and must be at least 1.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="modifyOrderForm.invalid">Submit Modification</button>
+    </form>
+  </div>
+</div>

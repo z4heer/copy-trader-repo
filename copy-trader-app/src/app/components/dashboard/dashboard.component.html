@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+      <h2>Active Users</h2>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of activeUsers">
+            <td>{{ user.userid }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>   

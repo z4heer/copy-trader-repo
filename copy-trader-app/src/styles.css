@@ -1,0 +1,28 @@
+/* Custom styles for navigation button appearance and form section borders */
+
+/* Remove default anchor styling inside buttons */
+.nav-link {
+  text-decoration: none;
+}
+
+/* Ensure that routerLink active buttons have a distinct look */
+.nav-link.active, .nav-link.btn.active {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+}
+
+/* Optional: Add a light border to card containing forms */
+.light-border {
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+}
+
+/* Adjust header styling */
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  margin: 0;
+} 

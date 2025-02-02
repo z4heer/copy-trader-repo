@@ -1,0 +1,42 @@
+<!-- app.component.html -->
+<!-- Header Section -->
+<header class="container my-4">
+  <div class="p-4 bg-secondary text-white rounded" >
+    <div class="card p-4 mb-4 light-border" >
+      <h1>Copy Trader App</h1>
+      <p>Your one-stop solution for copy trading.</p>
+    </div>
+  </div>
+</header>
+
+<!-- Navigation items in one horizontal line styled as buttons -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container align-items-center">
+    <div class="collapse navbar-collapse"  id="navbarNav">
+      <div class="navbar-nav d-flex flex-row">
+        <div class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+        </div>
+        <div class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-primary" routerLink="/buy-orders" routerLinkActive="active">Buy Orders</a>
+        </div>
+        <div class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-primary" routerLink="/list-orders" routerLinkActive="active">List Orders</a>
+        </div>
+        <div class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-primary" routerLink="/modify-order" routerLinkActive="active">Modify Order</a>
+        </div>
+        <div class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-primary" routerLink="/net-positions" routerLinkActive="active">Net Positions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Dynamic Page Content (Forms, etc.) -->
+<div class="container">
+  <div class="card p-4 mb-4 light-border" >
+    <router-outlet></router-outlet>
+  </div>
+</div>
