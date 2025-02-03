@@ -16,11 +16,11 @@ export class BuyOrdersComponent implements OnInit {
   
   // Sample data: You can pre-populate with defaults
   sampleData = {
-    quantity: 10,
+    quantity: 0,
     orderType: 'market'
   };
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private apiService: ApiService) {}
 
   ngOnInit() {
     this.buyOrderForm = this.fb.group({
@@ -33,8 +33,12 @@ export class BuyOrdersComponent implements OnInit {
     if (this.buyOrderForm.valid) {
       console.log('Buy Order Data:', this.buyOrderForm.value);
       // Update dynamic logic later
+      this.apiService.placeBuyOrder().subscribe(data => {
+        console.log('Buy Order placed successfully');
+      });
     } else {
       console.log('Buy Order form is invalid');
     }
   }
+    
 } 

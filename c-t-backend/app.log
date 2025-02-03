@@ -1,10 +1,118 @@
-2025-02-02 13:19:45,647 [INFO] Fetched 4 active users.
-2025-02-02 13:19:45,647 [INFO] 127.0.0.1 - - [02/Feb/2025 13:19:45] "GET /active-users HTTP/1.1" 200 -
-2025-02-02 13:21:04,582 [INFO] Fetched 4 active users.
-2025-02-02 13:21:04,582 [INFO] 127.0.0.1 - - [02/Feb/2025 13:21:04] "GET /active-users HTTP/1.1" 200 -
-2025-02-02 13:24:04,279 [INFO] Fetched 4 active users.
-2025-02-02 13:24:04,279 [INFO] 127.0.0.1 - - [02/Feb/2025 13:24:04] "GET /active-users HTTP/1.1" 200 -
-2025-02-02 13:25:34,627 [INFO] Fetched 4 active users.
-2025-02-02 13:25:34,627 [INFO] 127.0.0.1 - - [02/Feb/2025 13:25:34] "GET /active-users HTTP/1.1" 200 -
-2025-02-02 13:26:37,792 [INFO] Fetched 4 active users.
-2025-02-02 13:26:37,793 [INFO] 127.0.0.1 - - [02/Feb/2025 13:26:37] "GET /active-users HTTP/1.1" 200 -
+2025-02-03 16:00:45,989 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.33:5000
+2025-02-03 16:00:46,009 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-03 16:00:46,012 [INFO]  * Restarting with stat
+2025-02-03 16:00:46,737 [WARNING]  * Debugger is active!
+2025-02-03 16:00:46,737 [INFO]  * Debugger PIN: 208-195-166
+2025-02-03 16:01:14,018 [INFO] Fetched 4 active users.
+2025-02-03 16:01:14,023 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:14] "GET /active-users HTTP/1.1" 200 -
+2025-02-03 16:01:26,428 [INFO] Listing all orders
+2025-02-03 16:01:26,428 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:26] "GET /orders HTTP/1.1" 200 -
+2025-02-03 16:01:45,709 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:45] "OPTIONS /modify-order/Level-1 HTTP/1.1" 200 -
+2025-02-03 16:01:45,965 [INFO] Order id Level-1 to modifty
+2025-02-03 16:01:45,965 [INFO] Order Level-1 modified: {'orderId': 'Level-1', 'newQuantity': '10'}
+2025-02-03 16:01:45,967 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:45] "PUT /modify-order/Level-1 HTTP/1.1" 200 -
+2025-02-03 16:01:46,025 [INFO] Listing all orders
+2025-02-03 16:01:46,025 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:46] "GET /orders HTTP/1.1" 200 -
+2025-02-03 16:01:49,470 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:49] "OPTIONS /cancel-order/B1 HTTP/1.1" 200 -
+2025-02-03 16:01:49,790 [INFO] Order B1 cancelled
+2025-02-03 16:01:49,790 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:49] "DELETE /cancel-order/B1 HTTP/1.1" 200 -
+2025-02-03 16:01:50,028 [INFO] Listing all orders
+2025-02-03 16:01:50,028 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:50] "GET /orders HTTP/1.1" 200 -
+2025-02-03 16:01:51,625 [INFO] Listing net positions
+2025-02-03 16:01:51,625 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:51] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:01:55,124 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:55] "OPTIONS /sell-order HTTP/1.1" 200 -
+2025-02-03 16:01:55,379 [INFO] Sell order executed: {'orderId': 'NP1', ' quantity': '50', 'status': 'sold', 'details': 'Sell order executed'}
+2025-02-03 16:01:55,379 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:55] "POST /sell-order HTTP/1.1" 200 -
+2025-02-03 16:01:55,443 [INFO] Listing net positions
+2025-02-03 16:01:55,443 [INFO] 127.0.0.1 - - [03/Feb/2025 16:01:55] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:05:42,919 [INFO] Listing net positions
+2025-02-03 16:05:42,919 [INFO] 127.0.0.1 - - [03/Feb/2025 16:05:42] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:05:56,162 [INFO] Fetched 4 active users.
+2025-02-03 16:05:56,162 [INFO] 127.0.0.1 - - [03/Feb/2025 16:05:56] "GET /active-users HTTP/1.1" 200 -
+2025-02-03 16:05:58,310 [INFO] Fetched 4 active users.
+2025-02-03 16:05:58,310 [INFO] 127.0.0.1 - - [03/Feb/2025 16:05:58] "GET /active-users HTTP/1.1" 200 -
+2025-02-03 16:06:16,793 [INFO] Fetched 4 active users.
+2025-02-03 16:06:16,794 [INFO] 127.0.0.1 - - [03/Feb/2025 16:06:16] "GET /active-users HTTP/1.1" 200 -
+2025-02-03 16:06:19,898 [INFO] Listing Stock Holdings
+2025-02-03 16:06:19,898 [INFO] 127.0.0.1 - - [03/Feb/2025 16:06:19] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:07:22,769 [INFO]  * Detected change in 'C:\\Users\\HP\\source\\repos\\z4heer\\coding\\copy-trader-app-dev-rel-1\\c-t-backend\\app.py', reloading
+2025-02-03 16:07:22,851 [INFO]  * Restarting with stat
+2025-02-03 16:07:23,466 [WARNING]  * Debugger is active!
+2025-02-03 16:07:23,466 [INFO]  * Debugger PIN: 208-195-166
+2025-02-03 16:07:46,722 [INFO] Listing net positions
+2025-02-03 16:07:46,722 [INFO] 127.0.0.1 - - [03/Feb/2025 16:07:46] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:07:48,214 [INFO] Listing Stock Holdings
+2025-02-03 16:07:48,217 [INFO] 127.0.0.1 - - [03/Feb/2025 16:07:48] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:07:53,385 [INFO] Listing Stock Holdings
+2025-02-03 16:07:53,389 [INFO] 127.0.0.1 - - [03/Feb/2025 16:07:53] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:08:19,114 [INFO]  * Detected change in 'C:\\Users\\HP\\source\\repos\\z4heer\\coding\\copy-trader-app-dev-rel-1\\c-t-backend\\app.py', reloading
+2025-02-03 16:08:19,190 [INFO]  * Restarting with stat
+2025-02-03 16:08:19,835 [WARNING]  * Debugger is active!
+2025-02-03 16:08:19,835 [INFO]  * Debugger PIN: 208-195-166
+2025-02-03 16:08:31,086 [INFO] Listing net positions
+2025-02-03 16:08:31,090 [INFO] 192.168.1.33 - - [03/Feb/2025 16:08:31] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:08:31,291 [INFO] 192.168.1.33 - - [03/Feb/2025 16:08:31] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-02-03 16:08:40,710 [INFO] Listing Stock Holdings
+2025-02-03 16:08:40,726 [INFO] 192.168.1.33 - - [03/Feb/2025 16:08:40] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:08:40,787 [INFO] 192.168.1.33 - - [03/Feb/2025 16:08:40] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-02-03 16:09:02,533 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.33:5000
+2025-02-03 16:09:02,533 [INFO] [33mPress CTRL+C to quit[0m
+2025-02-03 16:09:02,533 [INFO]  * Restarting with stat
+2025-02-03 16:09:03,119 [WARNING]  * Debugger is active!
+2025-02-03 16:09:03,119 [INFO]  * Debugger PIN: 208-195-166
+2025-02-03 16:09:08,035 [INFO] Listing Stock Holdings
+2025-02-03 16:09:08,035 [INFO] 192.168.1.33 - - [03/Feb/2025 16:09:08] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:09:08,078 [INFO] 192.168.1.33 - - [03/Feb/2025 16:09:08] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-02-03 16:09:10,802 [INFO] Listing Stock Holdings
+2025-02-03 16:09:10,802 [INFO] 192.168.1.33 - - [03/Feb/2025 16:09:10] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:09:10,864 [INFO] 192.168.1.33 - - [03/Feb/2025 16:09:10] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-02-03 16:09:32,485 [INFO]  * Detected change in 'C:\\Users\\HP\\source\\repos\\z4heer\\coding\\copy-trader-app-dev-rel-1\\c-t-backend\\app.py', reloading
+2025-02-03 16:09:32,563 [INFO]  * Restarting with stat
+2025-02-03 16:09:33,195 [WARNING]  * Debugger is active!
+2025-02-03 16:09:33,197 [INFO]  * Debugger PIN: 208-195-166
+2025-02-03 16:09:37,506 [INFO] Listing Stock Holdings
+2025-02-03 16:09:37,509 [INFO] 192.168.1.33 - - [03/Feb/2025 16:09:37] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:09:37,550 [INFO] 192.168.1.33 - - [03/Feb/2025 16:09:37] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-02-03 16:09:43,659 [INFO] Listing net positions
+2025-02-03 16:09:43,661 [INFO] 127.0.0.1 - - [03/Feb/2025 16:09:43] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:09:44,829 [INFO] Listing Stock Holdings
+2025-02-03 16:09:44,831 [INFO] 127.0.0.1 - - [03/Feb/2025 16:09:44] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:09:51,644 [INFO] Listing Stock Holdings
+2025-02-03 16:09:51,646 [INFO] 127.0.0.1 - - [03/Feb/2025 16:09:51] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:11:48,664 [INFO]  * Detected change in 'C:\\Users\\HP\\source\\repos\\z4heer\\coding\\copy-trader-app-dev-rel-1\\c-t-backend\\app.py', reloading
+2025-02-03 16:11:48,743 [INFO]  * Restarting with stat
+2025-02-03 16:11:49,308 [WARNING]  * Debugger is active!
+2025-02-03 16:11:49,308 [INFO]  * Debugger PIN: 208-195-166
+2025-02-03 16:11:53,326 [INFO] Listing Stock Holdings
+2025-02-03 16:11:53,326 [INFO] 192.168.1.33 - - [03/Feb/2025 16:11:53] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:11:53,370 [INFO] 192.168.1.33 - - [03/Feb/2025 16:11:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 204 -
+2025-02-03 16:11:59,176 [INFO] Listing net positions
+2025-02-03 16:11:59,181 [INFO] 127.0.0.1 - - [03/Feb/2025 16:11:59] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:11:59,851 [INFO] Listing Stock Holdings
+2025-02-03 16:11:59,853 [INFO] 127.0.0.1 - - [03/Feb/2025 16:11:59] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:12:12,830 [INFO] 127.0.0.1 - - [03/Feb/2025 16:12:12] "OPTIONS /sell-order HTTP/1.1" 200 -
+2025-02-03 16:12:13,086 [INFO] Sell order executed: {'orderId': '1', ' quantity': '100', 'status': 'sold', 'details': 'Sell order executed'}
+2025-02-03 16:12:13,086 [INFO] 127.0.0.1 - - [03/Feb/2025 16:12:13] "POST /sell-order HTTP/1.1" 200 -
+2025-02-03 16:12:13,146 [INFO] Listing net positions
+2025-02-03 16:12:13,146 [INFO] 127.0.0.1 - - [03/Feb/2025 16:12:13] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:12:20,835 [INFO] Listing Stock Holdings
+2025-02-03 16:12:20,839 [INFO] 127.0.0.1 - - [03/Feb/2025 16:12:20] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:12:33,847 [INFO] Listing Stock Holdings
+2025-02-03 16:12:33,849 [INFO] 127.0.0.1 - - [03/Feb/2025 16:12:33] "GET /holdings HTTP/1.1" 200 -
+2025-02-03 16:12:45,057 [INFO] 127.0.0.1 - - [03/Feb/2025 16:12:45] "OPTIONS /sell-order HTTP/1.1" 200 -
+2025-02-03 16:12:45,366 [INFO] Sell order executed: {'orderId': '3', ' quantity': '31', 'status': 'sold', 'details': 'Sell order executed'}
+2025-02-03 16:12:45,368 [INFO] 127.0.0.1 - - [03/Feb/2025 16:12:45] "POST /sell-order HTTP/1.1" 200 -
+2025-02-03 16:12:45,619 [INFO] Listing net positions
+2025-02-03 16:12:45,619 [INFO] 127.0.0.1 - - [03/Feb/2025 16:12:45] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:13:30,748 [INFO] Listing all orders
+2025-02-03 16:13:30,750 [INFO] 127.0.0.1 - - [03/Feb/2025 16:13:30] "GET /orders HTTP/1.1" 200 -
+2025-02-03 16:13:48,458 [INFO] Listing net positions
+2025-02-03 16:13:48,458 [INFO] 127.0.0.1 - - [03/Feb/2025 16:13:48] "GET /net-positions HTTP/1.1" 200 -
+2025-02-03 16:13:59,880 [INFO] Listing Stock Holdings
+2025-02-03 16:13:59,880 [INFO] 127.0.0.1 - - [03/Feb/2025 16:13:59] "GET /holdings HTTP/1.1" 200 -

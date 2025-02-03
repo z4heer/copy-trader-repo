@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-cancel-order',
@@ -9,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   templateUrl: './cancel-order.component.html',
   styleUrl: './cancel-order.component.css',
+  providers: [ApiService]
 } )
 export class CancelOrderComponent implements OnInit {
   cancelOrderForm!: FormGroup;
@@ -18,7 +20,9 @@ export class CancelOrderComponent implements OnInit {
   };
   orderId: string | null = null;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute) {}
+  constructor(private fb: FormBuilder, private route: ActivatedRoute,private router: Router,
+    private apiService: ApiService
+  ) {}
 
   ngOnInit() {
     // Retrieve the orderId from the query parameters
@@ -36,6 +40,11 @@ export class CancelOrderComponent implements OnInit {
     if (this.cancelOrderForm.valid) {
       console.log('Cancel Order Data:', this.cancelOrderForm.value);
       // Dynamic logic to update order goes here
+      console.log('Order canceled for orderid= ',this.orderId);
+      this.apiService.cancelOrder(this.cancelOrderForm.value.orderId).subscribe(data => {
+      console.log('Order canceled successfully');
+      this.router.navigate(['/list-orders']); // Redirect to List Orders page
+      }); 
     } else {
       console.log('Cancel Order form is invalid');
     }

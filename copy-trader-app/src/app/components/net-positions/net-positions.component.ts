@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
 interface NetPosition {
-  positionId: string;
+  orderId: string;
   symbol: string;
   quantity: number;
   pnl: number;
@@ -19,9 +19,14 @@ interface NetPosition {
   providers: [ApiService]
 })
 export class NetPositionsComponent {
-  netPositions: NetPosition[] = [
-    { positionId: 'NP1', symbol: 'AAPL', quantity: 50, pnl: 120.5 },
-    { positionId: 'NP2', symbol: 'GOOGL', quantity: 30, pnl: -50.0 },
-    { positionId: 'NP3', symbol: 'MSFT', quantity: 40, pnl: 75.2 }
-  ];
-}
+  constructor(private apiService: ApiService) {}
+  netPositions: NetPosition[] = [];
+  ngOnInit(): void {
+    if (this.apiService) {
+      this.apiService.getNetPositions().subscribe(data => {
+        this.netPositions = data;
+        console.log(this.netPositions);
+      });
+    }
+  }
+} 

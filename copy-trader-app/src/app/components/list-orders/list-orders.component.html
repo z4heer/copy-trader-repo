@@ -21,7 +21,7 @@
           <td>{{ order.status }}</td>
           <td>
             <!-- Link to modify order. Passing the orderId as a query parameter -->
-            <a [routerLink]="['/modify-order']" [queryParams]="{ orderId: order.orderId }" class="btn btn-sm btn-warning me-2">
+            <a [routerLink]="['/modify-order']" [queryParams]="{ orderId: order.orderId, quantity:order.quantity}" class="btn btn-sm btn-warning me-2">
               Modify
             </a>
             <!-- Link to cancel order. Passing the orderId as a query parameter -->

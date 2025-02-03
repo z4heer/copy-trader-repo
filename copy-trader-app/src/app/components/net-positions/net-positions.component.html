@@ -15,13 +15,13 @@
       </thead>
       <tbody>
         <tr *ngFor="let position of netPositions">
-          <td>{{ position.positionId }}</td>
+          <td>{{ position.orderId }}</td>
           <td>{{ position.symbol }}</td>
           <td>{{ position.quantity }}</td>
           <td>{{ position.pnl }}</td>
           <td>
             <!-- Link to sell order. Passing the positionId as a query parameter -->
-            <a [routerLink]="['/sell-order']" [queryParams]="{ orderId: position.positionId }" class="btn btn-sm btn-success">
+            <a [routerLink]="['/sell-order']" [queryParams]="{ orderId: position.orderId, quantity:position.quantity}" class="btn btn-sm btn-success">
               Sell
             </a>
           </td>

@@ -9,7 +9,6 @@ interface Order {
   quantity: number;
   status: string;
 }
-
 @Component({
   selector: 'app-list-orders',
   standalone: true,
@@ -19,10 +18,16 @@ interface Order {
   providers: [ApiService]
 })
 export class ListOrdersComponent {
-  // Sample order data
-  orders: Order[] = [
-    { orderId: 'B1', type: 'Buy', quantity: 10, status: 'pending' },
-    { orderId: 'B2', type: 'Buy', quantity: 20, status: 'completed' },
-    { orderId: 'M1', type: 'Modify', quantity: 15, status: 'pending' }
-  ];
+
+  constructor(private apiService: ApiService) {}
+  orders: Order[] = [];
+  ngOnInit(): void {
+    console.log('dashboard component initialized');
+    this.apiService.getOrders().subscribe(data => {
+      this.orders = data;
+      console.log(this.orders);
+    });
+  }
+ 
 } 
+

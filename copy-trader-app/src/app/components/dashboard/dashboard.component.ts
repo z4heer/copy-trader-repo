@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   providers: [ApiService]
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   activeUsers: any[] = [];
 
   constructor(private apiService: ApiService) {}

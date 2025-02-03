@@ -49,8 +49,14 @@ export class ApiService {
   }
 
   // Sell Order
-  sellOrder(orderId: string): Observable<any> {
-    console.log("sellOrder, orderId: ", orderId);
-    return this.http.post(`${this.baseUrl}/sell-order`, { orderId });
+  sellOrder(orderId: string, quantity:string): Observable<any> {
+    console.log("sellOrder, orderId: ,quantity", orderId,quantity);
+    return this.http.post(`${this.baseUrl}/sell-order`, { orderId ,quantity});
   }
+ // Net Positions
+ getNetHoldings(): Observable<any> {
+  console.log("getNetPositions");
+  return this.http.get(`${this.baseUrl}/holdings`);
+}
+
 } 

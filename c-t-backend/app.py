@@ -26,28 +26,28 @@ active_users = [
 
 orders = [
   {
-    "orderId": "B1",
+    "orderId": "Level-1",
     "type": "Buy",
     "quantity": 10,
     "status": "pending",
     "timestamp": "2025-01-30T10:15:00Z"
   },
   {
-    "orderId": "B2",
+    "orderId": "Level-2",
     "type": "Buy",
     "quantity": 20,
     "status": "completed",
     "timestamp": "2025-01-29T14:30:00Z"
   },
   {
-    "orderId": "M1",
+    "orderId": "Level-3",
     "type": "Modify",
     "quantity": 15,
     "status": "pending",
     "timestamp": "2025-01-30T11:00:00Z"
   },
   {
-    "orderId": "C1",
+    "orderId": "Level-4",
     "type": "Cancel",
     "quantity": 5,
     "status": "cancelled",
@@ -57,28 +57,35 @@ orders = [
   # In-memory list to hold orders
 net_positions = [
   {
-    "positionId": "NP1",
+    "orderId": "NP1",
     "symbol": "AAPL",
     "quantity": 50,
     "pnl": 120.5,
     "lastUpdated": "2025-01-30T10:00:00Z"
   },
   {
-    "positionId": "NP2",
+    "orderId": "NP2",
     "symbol": "GOOGL",
     "quantity": 30,
     "pnl": -50.0,
     "lastUpdated": "2025-01-29T15:00:00Z"
   },
   {
-    "positionId": "NP3",
+    "orderId": "NP3",
     "symbol": "MSFT",
     "quantity": 40,
     "pnl": 75.2,
     "lastUpdated": "2025-01-30T09:30:00Z"
   }
 ]
-  # In-memory net positions (for demonstration)
+# In-memory net positions (for demonstration)
+# Sample data for holdings
+holdings = [
+    {'orderId': 1, 'symbol': 'INFY', 'quantity': 100, 'price': 150},
+    {'orderId': 2, 'symbol': 'TCS', 'quantity': 24, 'price': 2800},
+    {'orderId': 3, 'symbol': 'TITAN', 'quantity': 31, 'price': 3300}
+]
+
 
 # Error handler
 @app.errorhandler(Exception)
@@ -157,6 +164,7 @@ def modify_order(orderId):
     try:
         update_data = request.get_json()
         # Find the order and update it (dummy logic)
+        logging.info("Order id %s to modifty", orderId)
         for order in orders:
             if order["orderId"] == orderId:
                 order.update(update_data)
@@ -196,8 +204,9 @@ def sell_order():
     try:
         data = request.get_json()
         orderId = data.get("orderId")
+        quantity = data.get("quantity")
         # Dummy logic to simulate selling an order from net positions
-        sell_result = {"orderId": orderId, "status": "sold", "details": "Sell order executed"}
+        sell_result = {"orderId": orderId, " quantity":quantity, "status": "sold", "details": "Sell order executed"}
         logging.info("Sell order executed: %s", sell_result)
         return jsonify(sell_result), 200
     except Exception as e:
@@ -208,6 +217,17 @@ def sell_order():
 def favicon():
     # Option A: Return a 204 No Content response
     return make_response('', 204)
+
+
+# Endpoint: List Net Positions
+@app.route('/holdings', methods=['GET'])
+def list_holdings():
+    try:
+        logging.info("Listing Stock Holdings")
+        return jsonify(holdings), 200
+    except Exception as e:
+        logging.error("Error in list_holdings: %s", str(e))
+        return jsonify({"error": "Failed to fetch holdings"}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
