@@ -1,3 +1,4 @@
+import json
 import time
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -6,8 +7,8 @@ import logging
 import traceback
 from openpyxl import load_workbook
 from flask import make_response
-
-from CreateTrades import place_eq_trade, fetch_orders
+from my_conns import MyConns
+from CreateTrades import place_eq_trade, fetch_orders, login_fetch_apiconnect
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -26,6 +27,9 @@ active_users = [
     {"apiKey": "xxx", "api_secret_password": "xxx", "reqId": "2", "userid": "U1002", "active": True, "quantity": 20},
     {"apiKey": "xxx", "api_secret_password": "xxx", "reqId": "3", "userid": "U1003", "active": False, "quantity": 15}
 ]
+active_connections= MyConns()
+# List active users connections
+active_users_connections =[]
 
 orders = [
   {
@@ -113,36 +117,34 @@ def handle_exception(e):
 
 
 def read_active_users():
-    """
-    Reads the users.xlsx file from the conf folder and returns only the active users.
-    Assumes the Excel file has a header row with the following columns:
-    apiKey, api_secret_password, reqId, userid, active, quantity
-    """
     file_path = os.path.join('conf', 'users.xlsx')
-
     # Load the workbook and select the active sheet
     wb = load_workbook(file_path, data_only=True)
     sheet = wb.active
-
     # Read header row (first row)
     header = [cell.value for cell in sheet[1]]
-    active_users = []
-
     # Iterate through the remaining rows
+    a_users=[]
     for row in sheet.iter_rows(min_row=2, values_only=True):
         user = dict(zip(header, row))
         # Filter active users. Adjust the condition if 'active' is stored as a boolean or a string.
         if user.get('active') in [True, 'TRUE', 'True']:
-            active_users.append(user)
-    #order_book()
-    return active_users
+            try:
+                # Get API Connection and Add to API Conn Map
+                api_conn = login_fetch_apiconnect(user['apiKey'], user['api_secret_password'], user['reqId'])
+                if api_conn is None:
+                    active_connections.connect(user['userid'], None)
+                    user['comment']="Session is expired; Please generate request id"
+                    logging.info(f"Session expired- {api_conn}")
+            except Exception as e:
+                logging.error("Error reading users file: %s", str(e))
+                return jsonify({"error": "Unable to read user config file"}), 500
+            a_users.append(user)
+    return a_users
 
 
 @app.route('/active-users', methods=['GET'])
 def get_active_users():
-    """
-    Flask endpoint to return active users read from the Excel configuration file.
-    """
     try:
         users = read_active_users()
         logging.info("Fetched %d active users.", len(users))
@@ -154,29 +156,34 @@ def get_active_users():
 # Endpoint: Place Buy Order
 @app.route('/buy-order', methods=['POST'])
 def place_buy_order():
+    """
+    Flask endpoint to place buy order
+    """
     try:
         logging.info("place_buy_order()")
         buy_data = request.get_json()
         a_users = read_active_users()
         logging.info(f"buy_data= {buy_data}")
-        orders = []
+        a_orders = []
         for user in a_users:
-            logging.info("Placing trade for user %s", user['userid'])
-            order = {
-                "symbol": buy_data.get("symbol"),
-                "quantity": buy_data.get("quantity"),
-                "price": buy_data.get("price"),
-                "userid": user['userid']
-            }
-            trade_response = place_eq_trade(
-                user['apiKey'], user['api_secret_password'], user['reqId'],
-                buy_data.get("symbol"), buy_data.get("quantity"), buy_data.get("price")
-            )
-            logging.info(f"trade_response= {trade_response}")
-            time.sleep(1)  # Add a delay between requests to avoid rate limiting
+            if user['comment'] != "Session is expired; Please generate request id":
+                logging.info("Comment about user connection %s", user['comment'])
+                order = {
+                    "symbol": buy_data.get("symbol"),
+                    "quantity": buy_data.get("quantity"),
+                    "price": buy_data.get("price"),
+                    "userid": user['userid']
+                }
+                trade_response = place_eq_trade(
+                    user['userid'], buy_data.get("symbol"),
+                    buy_data.get("quantity"), buy_data.get("price")
+                )
+                a_orders.append(order)
+                logging.info(f"trade_response= {trade_response}")
+                time.sleep(1)  # Add a delay between requests to avoid rate limiting
 
         logging.info(f"place_buy_order() placed- buy_data= {buy_data}")
-        return jsonify(orders), 200
+        return jsonify(a_orders), 200
     except Exception as e:
         logging.error("Error in place_buy_order: %s", str(e))
         return jsonify({"error": "Failed to place buy order"}), 500
@@ -188,23 +195,24 @@ def list_orders():
         a_users = read_active_users()
         all_formatted_orders = []
         for user in a_users:
-            logging.info("Placing trade for user %s", user['userid'])
-            fetch_response = fetch_orders(user['apiKey'], user['api_secret_password'], user['reqId'])
-            if fetch_response is None:
-                return jsonify({"error": "Failed to fetch orders"}), 500
+            if user['comment'] != "Session is expired; Please generate request id":
+                logging.info("Placing list_orders for user %s", user['userid'])
+                fetch_response = fetch_orders(user['userid'])
+                if fetch_response is None:
+                    return jsonify({"error": "Failed to fetch orders"}), 500
 
-            f_orders = fetch_response.get("eq", {}).get("data", {}).get("ord", [])
-            for order in f_orders:
-                formatted_order = {
-                    "orderId": order.get("ordID"),
-                    "symbol": order.get("dpName"),
-                    "quantity": order.get("ntQty"),
-                    "price": order.get("prc"),
-                    "type": order.get("ordTyp"),
-                    "status": order.get("sts"),
-                    "userid": order.get("userID")
-                }
-                all_formatted_orders.append(formatted_order)
+                f_orders = fetch_response.get("eq", {}).get("data", {}).get("ord", [])
+                for order in f_orders:
+                    formatted_order = {
+                        "orderId": order.get("ordID"),
+                        "symbol": order.get("dpName"),
+                        "quantity": order.get("ntQty"),
+                        "price": order.get("prc"),
+                        "type": order.get("ordTyp"),
+                        "status": order.get("sts"),
+                        "userid": order.get("userID")
+                    }
+                    all_formatted_orders.append(formatted_order)
 
         logging.info(f"list_order() fetched- order_data= {all_formatted_orders}")
         return jsonify(all_formatted_orders), 200
