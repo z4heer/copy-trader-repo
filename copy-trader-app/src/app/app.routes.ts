@@ -6,7 +6,7 @@ import { ModifyOrderComponent } from './components/modify-order/modify-order.com
 import { NetPositionsComponent } from './components/net-positions/net-positions.component';
 import { SellOrderComponent } from './components/sell-order/sell-order.component';
 import { CancelOrderComponent } from './components/cancel-order/cancel-order.component';
-import { ListHoldingsComponent } from './list-holdings/list-holdings.component';
+import { ListHoldingsComponent } from './components/list-holdings/list-holdings.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent, pathMatch: 'full' },

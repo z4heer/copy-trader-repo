@@ -1,0 +1,129 @@
+/* Add a background image related to stock trading with a light shed */
+body {
+  background-image: url('./assets/images/trading-3.gif'); /* Ensure this path is correct */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 0.8); /* Light shed */
+  background-blend-mode: lighten;
+}
+
+/* Fix forms with proper spacing in between */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between form elements */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Style lists to have alternate colors */
+ul li:nth-child(odd),
+ol li:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+ul li:nth-child(even),
+ol li:nth-child(even) {
+  background-color: #e9e9e9;
+}
+/* Center align the text and links */
+.navbar-nav .nav-link {
+  text-align: center;
+}
+
+/* Add some padding and margin to the buttons */
+.navbar-nav .nav-item {
+  margin: 0 5px;
+}
+
+/* Add a border radius to the buttons */
+.navbar-nav .nav-link.btn {
+  border-radius: 5px;
+}
+
+/* Add a hover effect to the buttons */
+.navbar-nav .nav-link.btn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Center align the container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Center align the header text */
+header .card {
+  text-align: center;
+}
+
+/* Add shadow and padding to the header and content cards */
+header .card, .card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 1px solid #343a40; /* Changed to dark color */
+}
+
+/* Ensure the navigation bar items are displayed in a single row */
+.navbar-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #efc5a0;
+  text-emphasis-color: #343a40;
+  border: 1px solid #343a40; /* Changed to dark color */
+}
+
+/* Style the header background */
+header .bg-primary {
+  background-color: #efc5a0 !important; /* Changed to gray */
+}
+
+/* Style the header text */
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.25rem;
+}
+
+/* Fix the size of the content box */
+.fixed-size {
+  width: 80%;
+  max-width: 1200px;
+  min-height: 400px;
+}
+
+/* Style the trade lifecycle badges */
+.badge {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+/* Style the arrows in the trade lifecycle */
+.fa-arrow-right {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+/* Fix forms with proper spacing in between */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between form elements */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}

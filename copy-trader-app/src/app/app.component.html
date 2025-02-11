@@ -1,33 +1,31 @@
-<!-- app.component.html -->
 <!-- Header Section -->
-<header class="container my-4">
-  <div class="p-4 bg-secondary text-white rounded" >
-    <div class="card p-4 mb-4 light-border" >
-      <h1>Copy Trader App</h1>
-      <p>Your one-stop solution for copy trading.</p>
+<header class="container my-4 text-center">
+  <div class="p-4 bg-primary text-white rounded shadow-sm">
+    <div class="card p-4 mb-4 light-border shadow-sm">
+      <h1>Copy Trading App</h1>
     </div>
   </div>
 </header>
 
 <!-- Navigation items in one horizontal line styled as buttons -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-  <div class="container align-items-center">
-    <div class="collapse navbar-collapse"  id="navbarNav">
-      <div class="navbar-nav d-flex flex-row">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
+  <div class="container align-items-center justify-content-center">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav d-flex flex-row justify-content-center">
         <div class="nav-item mx-1">
-          <a class="nav-link btn btn-outline-primary" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+          <a class="nav-link btn btn-outline-primary text-center" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
         </div>
         <div class="nav-item mx-1">
-          <a class="nav-link btn btn-outline-primary" routerLink="/buy-orders" routerLinkActive="active">Buy Orders</a>
+          <a class="nav-link btn btn-outline-primary text-center" routerLink="/buy-orders" routerLinkActive="active">Buy Orders</a>
         </div>
         <div class="nav-item mx-1">
-          <a class="nav-link btn btn-outline-primary" routerLink="/list-orders" routerLinkActive="active">List Orders</a>
+          <a class="nav-link btn btn-outline-primary text-center" routerLink="/list-orders" routerLinkActive="active">List Orders</a>
         </div>
         <div class="nav-item mx-1">
-          <a class="nav-link btn btn-outline-primary" routerLink="/net-positions" routerLinkActive="active">Net Positions</a>
+          <a class="nav-link btn btn-outline-primary text-center" routerLink="/net-positions" routerLinkActive="active">Net Positions</a>
         </div>
         <div class="nav-item mx-1">
-          <a class="nav-link btn btn-outline-primary" routerLink="/list-holdings" routerLinkActive="active">List Holdings</a>
+          <a class="nav-link btn btn-outline-primary text-center" routerLink="/list-holdings" routerLinkActive="active">List Holdings</a>
         </div>
       </div>
     </div>
@@ -35,8 +33,8 @@
 </nav>
 
 <!-- Dynamic Page Content (Forms, etc.) -->
-<div class="container">
-  <div class="card p-4 mb-4 light-border" >
+<div class="container d-flex justify-content-center">
+  <div class="card p-4 mb-4 light-border shadow-sm">
     <router-outlet></router-outlet>
   </div>
 </div>

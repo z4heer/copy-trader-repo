@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ApiService } from '../services/api.service';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-list-holdings',

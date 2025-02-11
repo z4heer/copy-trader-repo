@@ -7,8 +7,10 @@
       <thead>
         <tr>
           <th>Order ID</th>
+          <th>Symbol</th>
           <th>Type</th>
           <th>Quantity</th>
+          <th>Price</th>
           <th>Status</th>
           <th>Actions</th>
         </tr>
@@ -16,8 +18,10 @@
       <tbody>
         <tr *ngFor="let order of orders">
           <td>{{ order.orderId }}</td>
+          <td>{{ order.symbol}}</td> 
           <td>{{ order.type }}</td>
           <td>{{ order.quantity }}</td>
+          <td>{{ order.price }}</td>
           <td>{{ order.status }}</td>
           <td>
             <!-- Link to modify order. Passing the orderId as a query parameter -->

@@ -5,8 +5,10 @@ import { ApiService } from '../../services/api.service';
 
 interface Order {
   orderId: string;
+  symbol: string;
   type: string;
   quantity: number;
+  price: number;
   status: string;
 }
 @Component({

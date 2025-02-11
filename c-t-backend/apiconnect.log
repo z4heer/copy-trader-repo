@@ -1,0 +1,107 @@
+2025-02-07 17:43:04,359 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.33:5000
+2025-02-07 17:43:04,359 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-02-07 17:43:04,359 [INFO] werkzeug:  * Restarting with stat
+2025-02-07 17:43:06,436 [WARNING] werkzeug:  * Debugger is active!
+2025-02-07 17:43:06,436 [INFO] werkzeug:  * Debugger PIN: 208-195-166
+2025-02-07 17:43:09,407 [INFO] root: Listing all orders
+2025-02-07 17:43:09,417 [INFO] root: Placing trade for user 45937331
+2025-02-07 17:48:55,073 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.33:5000
+2025-02-07 17:48:55,073 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-02-07 17:48:55,073 [INFO] werkzeug:  * Restarting with stat
+2025-02-07 17:48:56,460 [WARNING] werkzeug:  * Debugger is active!
+2025-02-07 17:48:56,464 [INFO] werkzeug:  * Debugger PIN: 208-195-166
+2025-02-07 17:49:01,885 [INFO] root: Listing all orders
+2025-02-07 17:49:01,891 [INFO] root: Placing trade for user 45937331
+2025-02-07 18:09:32,674 [INFO] werkzeug:  * Restarting with stat
+2025-02-07 18:09:34,454 [WARNING] werkzeug:  * Debugger is active!
+2025-02-07 18:09:34,458 [INFO] werkzeug:  * Debugger PIN: 208-195-166
+2025-02-07 18:11:23,773 [INFO] werkzeug: 127.0.0.1 - - [07/Feb/2025 18:11:23] "OPTIONS /buy-order HTTP/1.1" 200 -
+2025-02-07 18:11:24,023 [INFO] root: place_buy_order()
+2025-02-07 18:11:24,040 [INFO] root: buy_data= {}
+2025-02-07 18:11:24,040 [INFO] root: Placing trade for user 45937331
+2025-02-08 18:11:55,966 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.33:5000
+2025-02-08 18:11:55,966 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-02-08 18:11:55,966 [INFO] werkzeug:  * Restarting with stat
+2025-02-08 18:11:56,725 [WARNING] werkzeug:  * Debugger is active!
+2025-02-08 18:11:56,757 [INFO] werkzeug:  * Debugger PIN: 208-195-166
+2025-02-08 18:12:34,491 [INFO] root: Fetched 1 active users.
+2025-02-08 18:12:34,491 [INFO] werkzeug: 127.0.0.1 - - [08/Feb/2025 18:12:34] "GET /active-users HTTP/1.1" 200 -
+2025-02-08 18:12:51,263 [INFO] root: Listing all orders
+2025-02-08 18:12:51,267 [INFO] root: Placing trade for user 45937331
+2025-02-09 12:40:57,425 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.33:5000
+2025-02-09 12:40:57,427 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-02-09 12:40:57,429 [INFO] werkzeug:  * Restarting with stat
+2025-02-09 12:40:58,286 [WARNING] werkzeug:  * Debugger is active!
+2025-02-09 12:40:58,286 [INFO] werkzeug:  * Debugger PIN: 208-195-166
+2025-02-09 12:41:30,319 [INFO] root: Fetched 1 active users.
+2025-02-09 12:41:30,321 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:41:30] "GET /active-users HTTP/1.1" 200 -
+2025-02-09 12:41:43,491 [INFO] root: Listing net positions
+2025-02-09 12:41:43,491 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:41:43] "GET /net-positions HTTP/1.1" 200 -
+2025-02-09 12:41:50,733 [INFO] root: Listing Stock Holdings
+2025-02-09 12:41:50,733 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:41:50] "GET /holdings HTTP/1.1" 200 -
+2025-02-09 12:47:08,179 [INFO] root: Listing Stock Holdings
+2025-02-09 12:47:08,179 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:47:08] "GET /holdings HTTP/1.1" 200 -
+2025-02-09 12:47:10,265 [INFO] root: Listing net positions
+2025-02-09 12:47:10,265 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:47:10] "GET /net-positions HTTP/1.1" 200 -
+2025-02-09 12:54:09,228 [INFO] root: Fetched 1 active users.
+2025-02-09 12:54:09,228 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:54:09] "GET /active-users HTTP/1.1" 200 -
+2025-02-09 12:55:13,353 [INFO] root: Fetched 1 active users.
+2025-02-09 12:55:13,355 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:55:13] "GET /active-users HTTP/1.1" 200 -
+2025-02-09 12:55:16,902 [INFO] root: Listing Stock Holdings
+2025-02-09 12:55:16,903 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:55:16] "GET /holdings HTTP/1.1" 200 -
+2025-02-09 12:55:19,096 [INFO] root: Listing net positions
+2025-02-09 12:55:19,098 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:55:19] "GET /net-positions HTTP/1.1" 200 -
+2025-02-09 12:56:48,410 [INFO] root: Listing net positions
+2025-02-09 12:56:48,410 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:56:48] "GET /net-positions HTTP/1.1" 200 -
+2025-02-09 12:56:54,187 [INFO] root: Listing net positions
+2025-02-09 12:56:54,187 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:56:54] "GET /net-positions HTTP/1.1" 200 -
+2025-02-09 12:56:54,496 [INFO] root: Listing net positions
+2025-02-09 12:56:54,496 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:56:54] "GET /net-positions HTTP/1.1" 200 -
+2025-02-09 12:56:56,197 [INFO] root: Listing Stock Holdings
+2025-02-09 12:56:56,197 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:56:56] "GET /holdings HTTP/1.1" 200 -
+2025-02-09 12:56:58,150 [INFO] root: Listing net positions
+2025-02-09 12:56:58,150 [INFO] werkzeug: 127.0.0.1 - - [09/Feb/2025 12:56:58] "GET /net-positions HTTP/1.1" 200 -
+2025-02-09 12:56:59,640 [INFO] root: Listing all orders
+2025-02-09 12:56:59,642 [INFO] root: Placing trade for user 45937331
+2025-02-10 12:00:45,720 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.33:5000
+2025-02-10 12:00:45,720 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-02-10 12:00:45,720 [INFO] werkzeug:  * Restarting with stat
+2025-02-10 12:00:47,276 [WARNING] werkzeug:  * Debugger is active!
+2025-02-10 12:00:47,304 [INFO] werkzeug:  * Debugger PIN: 208-195-166
+2025-02-10 12:03:29,200 [INFO] root: Fetched 1 active users.
+2025-02-10 12:03:29,205 [INFO] werkzeug: 127.0.0.1 - - [10/Feb/2025 12:03:29] "GET /active-users HTTP/1.1" 200 -
+2025-02-10 12:03:40,108 [INFO] root: Listing Stock Holdings
+2025-02-10 12:03:40,110 [INFO] werkzeug: 127.0.0.1 - - [10/Feb/2025 12:03:40] "GET /holdings HTTP/1.1" 200 -
+2025-02-10 12:03:46,943 [INFO] root: Listing net positions
+2025-02-10 12:03:46,943 [INFO] werkzeug: 127.0.0.1 - - [10/Feb/2025 12:03:46] "GET /net-positions HTTP/1.1" 200 -
+2025-02-10 12:03:49,853 [INFO] root: Listing all orders
+2025-02-10 12:03:49,877 [INFO] root: Placing trade for user 45937331
+2025-02-10 12:08:46,978 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.33:5000
+2025-02-10 12:08:46,978 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-02-10 12:08:46,982 [INFO] werkzeug:  * Restarting with stat
+2025-02-10 12:08:48,674 [WARNING] werkzeug:  * Debugger is active!
+2025-02-10 12:08:48,674 [INFO] werkzeug:  * Debugger PIN: 208-195-166
+2025-02-10 12:09:08,193 [INFO] root: Fetched 1 active users.
+2025-02-10 12:09:08,193 [INFO] werkzeug: 127.0.0.1 - - [10/Feb/2025 12:09:08] "GET /active-users HTTP/1.1" 200 -
+2025-02-10 12:09:15,594 [INFO] root: Fetched 1 active users.
+2025-02-10 12:09:15,596 [INFO] werkzeug: 127.0.0.1 - - [10/Feb/2025 12:09:15] "GET /active-users HTTP/1.1" 200 -
+2025-02-10 12:09:25,561 [INFO] root: Listing all orders
+2025-02-10 12:09:25,576 [INFO] root: Placing trade for user 45937331

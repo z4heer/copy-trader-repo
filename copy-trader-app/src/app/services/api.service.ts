@@ -18,10 +18,11 @@ export class ApiService {
   }
 
   // Buy Orders: For all active users
-  placeBuyOrder(): Observable<any> 
+  placeBuyOrder(orderData:any): Observable<any> 
   {
     console.log('placeBuyOrder');
-    return this.http.post(`${this.baseUrl}/buy-order`, {});
+    return this.http.post<any>(`${this.baseUrl}/buy-order`, orderData);
+    
   }
 
   // List Orders
@@ -55,7 +56,7 @@ export class ApiService {
   }
  // Net Positions
  getNetHoldings(): Observable<any> {
-  console.log("getNetPositions");
+  console.log("getNetHoldings");
   return this.http.get(`${this.baseUrl}/holdings`);
 }
 
